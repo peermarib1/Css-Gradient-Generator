@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Css Gradient Generator</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
+        <h2 class="text-2xl font-bold mb-6 text-center">Css Gradient Generator</h2>
+        <!-- Gradient preview box -->
+        <div id="gradientBox" class="w-full h-48 mb-6 rounded-lg bg-gradient-to-r from-blue-500 to-green-500"></div>
+        <!-- Controls for gradient colors -->
+        <div class="mb-4 grid grid-cols-2 gap-4">
+            <div>
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="startColor">Start Color</label>
+                <div class="relative">
+                    <label for="startColor" class="color-button" style="background-color: #3b82f6;"></label>
+                    <input
+                        class="appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="startColor" type="color" value="#3b82f6">
+                </div>
+            </div>
+            <div>
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="endColor">End Color</label>
+                <div class="relative">
+                    <label for="endColor" class="color-button" style="background-color: #10b981;"></label>
+                    <input
+                        class="appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        id="endColor" type="color" value="#10b981">
+                </div>
+            </div>
+        </div>
+        <!-- Apply button -->
+        <button id="applyGradient"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mb-4 focus:outline-none focus:shadow-outline"
+            type="button">
+            Apply Gradient
+        </button>
+        <!-- Generated CSS code -->
+        <div class="bg-gray-200 rounded p-4 text-sm mb-4 flex items-center">
+            <label class="block text-gray-700 font-bold mb-2 flex-1">Generated CSS</label>
+            <code id="generatedCSS"
+                class="break-all flex-1">background-image: linear-gradient(to right, #3b82f6, #10b981);</code>
+            <button id="copyButton"
+                class="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="button">
+                Copy
+            </button>
+        </div>
+        <!-- Reset button -->
+        <button id="resetGradient"
+            class="bg-gray-400 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded w-full focus:outline-none focus:shadow-outline"
+            type="button">
+            Reset
+        </button>
+    </div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
